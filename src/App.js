@@ -22,11 +22,14 @@ function App() {
     setDices(allNewDice());
   }
 
+  function holdDice(id) {
+    console.log(id)
+  }
   return (
     <main>
       <div className="die-container">
         {dices.map((dice) => (
-          <Die value={dice.value} key={dice.id} isHeld={dice.isHeld}/>
+          <Die value={dice.value} key={dice.id} isHeld={dice.isHeld} holdDice={() => holdDice(dice.id)}/>
         ))}
       </div>
 
