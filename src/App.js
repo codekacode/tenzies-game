@@ -23,8 +23,11 @@ function App() {
   }
 
   function holdDice(id) {
-    console.log(id)
+    setDices(oldDice => oldDice.map(dice => {
+      return dice.id === id ? {...dice, isHeld:!dice.isHeld } : dice
+    }))
   }
+
   return (
     <main>
       <div className="die-container">
