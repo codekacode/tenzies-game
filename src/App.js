@@ -30,13 +30,25 @@ function App() {
 
   return (
     <main>
+      <h1 className="title">Tenzies Game</h1>
+      <p className="instructions">
+        Roll until all dice are the same. Click each die to freeze it at its
+        current value between rolls.
+      </p>
       <div className="die-container">
         {dices.map((dice) => (
-          <Die value={dice.value} key={dice.id} isHeld={dice.isHeld} holdDice={() => holdDice(dice.id)}/>
+          <Die
+            value={dice.value}
+            key={dice.id}
+            isHeld={dice.isHeld}
+            holdDice={() => holdDice(dice.id)}
+          />
         ))}
       </div>
 
-      <button onClick={rollDice} className="roll-dice">Roll Dice</button>
+      <button onClick={rollDice} className="roll-dice">
+        Roll Dice
+      </button>
     </main>
   );
 }
